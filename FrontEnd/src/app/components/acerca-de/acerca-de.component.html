@@ -1,0 +1,47 @@
+<!--<div class="row">
+        <button type="button" class="btn btn-primary" routerLink="/editacercade/1" *ngIf="isLogged">
+            Editar Persona
+        </button>
+
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <img src='{{persona.img}}' class="img-fluid" id="fotoPerfil">
+    </div>
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <p id="nombre">{{persona.nombre}} {{persona.apellido}}</p>
+        <p>Dev. Junior</p>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 descripcion">
+        <span>
+            <h1>Acerca de Mi</h1>
+            <p>{{persona.descripcion}}</p>
+        </span>
+    </div>
+</div>
+-->
+<section>
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-12 col-xl-4">
+                <div class="card-body text-center">
+                    <div class="mt-3 mb-5">
+                        <img src="{{persona.img}}" class="rounded-circle img-fluid img-proyecto" style="width: 150px;" />
+                    </div>
+                                        <p class="mb-3 text-muted"><em>About Me</em></p>
+                    <h4 class="mb-2"><strong>{{persona.nombre}} {{persona.apellido}}</strong></h4>
+
+                    <p class="mb-4">Developer</p>
+                    <div class="mb-4 pb-1">
+
+                        <p class="lead">
+                            {{persona.descripcion}}
+                          </p>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-rounded btn-lg" routerLink="/editacercade/1"
+                        *ngIf="isLogged">
+                        Edit Profile
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,77 @@
+<section>
+    <div class="container-fluid">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <li class="list-group-item d-flex justify-content-center align-items-start text-white">
+                        <div class="ms-2 me-auto">
+                            <h2 class="text-left text-white mb-2"><strong>HARD & SOFT SKILLS</strong></h2>
+                            <p class="text-muted text-white-50 text-left mb-4">Programming Languages</p>
+                        </div>
+                        <td *ngIf="isLogged">
+                            <button type="button" class="btn btn-outline-light btn-floating" routerLink="/newskill"
+                                *ngIf="isLogged">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </td>
+                    </li>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row">
+        <div class="text-center col-sm-4 col-md-4 col-lg-4 circulo mb-5" *ngFor="let skill of skill">
+            <circle-progress [percent]="(skill.porcentaje)" [radius]="90" [imageSrc]="''" [title]="(skill.nombre)"
+                [titleColor]="'#FFFFFF'" [showTitle]="true" [showImage]="false" [imageHeight]="70" [imageWidth]="70"
+                [showUnits]="false" [showSubtitle]="false" [outerStrokeWidth]="10" [innerStrokeWidth]="5"
+                [outerStrokeColor]="'#367824'" [innerStrokeColor]="'#1b1b1b'" [animation]="true"
+                [animationDuration]="600">
+            </circle-progress>
+
+            <div>
+                <td *ngIf="isLogged">
+                    <button type="button" class="btn btn-outline-success btn-floating" data-mdb-ripple-color="dark"
+                    routerLink="/editskill/{{skill.id}}">
+                        <i class="fas fa-pen"></i>
+                    </button>
+                </td>
+                <td *ngIf="isLogged">
+                    <button type="button" class="btn btn-outline-danger btn-floating" data-mdb-ripple-color="dark"
+                    (click)="delete(skill.id)">
+                        <i class="fas fa-xmark"></i>
+                    </button>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!--
+<div class="row">
+
+    <h1>Hard & Soft skills</h1>
+    <div class="col-lg-2">
+        <button type="button" routerLink="/newskill" class="btn btn-dark" *ngIf="isLogged">Nueva Skill</button>
+    </div>
+
+
+    <div class="text-center col-sm-4 col-md-4 col-lg-4 circulo" *ngFor="let skill of skill">
+        <circle-progress [percent]="(skill.porcentaje)" [radius]="90" [imageSrc]="''" [title]="(skill.nombre)"
+            [titleColor]="'#212F3C'" [showTitle]="true" [showImage]="false" [imageHeight]="70" [imageWidth]="70"
+            [showUnits]="false" [showSubtitle]="false" [outerStrokeWidth]="16" [innerStrokeWidth]="2"
+            [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="600">
+        </circle-progress>
+
+        <div>
+            <td *ngIf="isLogged">
+                <button class="btn btn-light" routerLink="/editskill/{{skill.id}}">
+                    <i class="bi bi-pencil-fill"></i></button>
+            </td>
+            <td *ngIf="isLogged">
+                <button class="btn btn-danger" (click)="delete(skill.id)">
+                    <i class="bi bi-trash-fill"></i></button>
+            </td>
+        </div>
+
+    </div>
+</div>
+-->
