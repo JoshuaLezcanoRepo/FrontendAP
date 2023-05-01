@@ -2,14 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { persona } from '../model/persona.model';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environments';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class PersonaService {
-  URL = environment.URL + 'personas/';
+  URL = 'https://backendjd.onrender.com/personas/';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -20,11 +20,11 @@ export class PersonaService {
   public detail(id: number): Observable<persona>{
     return this.httpClient.get<persona>(this.URL + `detail/${id}`);
   }
-  /*
-  public save(educacion: Educacion): Observable<any>{
-    return this.httpClient.post<any>(this.URL + 'create', educacion);
+  
+  public save(Persona: persona): Observable<any>{
+    return this.httpClient.post<any>(this.URL + 'create', Persona);
   }
-  */
+  
 
   public update(id: number, Persona: persona): Observable<any>{
     return this.httpClient.put<any>(this.URL + `update/${id}`, Persona);

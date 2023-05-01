@@ -3,13 +3,13 @@ import { identifierName } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Skill } from '../model/skill';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environments';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SkillService {
-  URL = environment.URL + 'skill/';
+  URL = 'https://backendjd.onrender.com/skill/';
   
   constructor(private httpClient: HttpClient) { }
 
